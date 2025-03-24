@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact information:</title>
+    <link  rel="stylesheet" href="flex.css">
+  </head>
+  <body>
+    <form method="post">
+      <fieldset>
+        <legend>Contact information:</legend>
+
+        <div>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" placeholder="First name" />
+          <label for="contact">Preferred contact method:</label>
+        </div>
+
+        <div>
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" placeholder="Last name" />
+          <input type="checkbox" />
+          <label>Email</label>
+        </div>
+        <div>
+          <label for="sname">Email:</label>
+          <input type="email" id="sname" name="sname" placeholder="Email" />
+          <input type="checkbox" />
+          <label>Telephone</label>
+        </div>
+        <div>
+          <label for="num">Telephone:</label>
+          <input type="tel" id="num" name="num" placeholder="Telephone" />
+        </div>
+      </fieldset>
+
+      <br />
+      <fieldset>
+        <legend>Feedback:</legend>
+        <div>
+          <label for="mes">Message subject:</label>
+          <input type="mes" id="mes" name="mes" placeholder="Message" />
+        </div>
+        <div>
+          <textarea name="message" rows="10" cols="30"> </textarea>
+        </div>
+        <div>
+          <label for="file">Attach a file:</label>
+          <input type="file" id="Choose file" />
+        </div>
+        <div>
+          <input type="submit" value="Send" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+
