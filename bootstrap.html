@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-
+scale=1">
+<!-- Bootstrap CSS -->
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/boo
+tstrap.min.css" rel="stylesheet" integrity="sha384-
+1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW
+3" crossorigin="anonymous">
+<title>Hello world!</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">HTML-esittely</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Valikko">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Linkit aiempiin tehtäviin -->
+          <li class="nav-item">
+            <a class="nav-link" href="https://sohvi13.github.io/sohvi.github.io/" target="_blank">
+              Tehtävä 1
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sohvi13.github.io/sohvi.github.io/flex_form.html" target="_blank">
+              Tehtävä 2
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sohvi13.github.io/sohvi.github.io/flex_hello.html" target="_blank">
+              Tehtävä 3
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <div class="container my-5">
+    <h1 class="mb-4">HTML:n perusteet</h1>
+    <p>
+      Tässä sivussa esittelen yksinkertaisesti HTML:n perusrakenteen ja 
+      käytetyt tärkeimmät tagit.  
+    </p>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;HTML&gt;</h2>
+            <p class="card-text">
+              <code>&lt;HTML&gt;</code> on jokaisen HTML-sivun juuritagi, joka 
+              kertoo selaimelle, että kyseessä on HTML-dokumentti. Sivun lopussa 
+              on <code>&lt;/HTML&gt;</code>-lopetustagi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;HEAD&gt;</h2>
+            <p class="card-text">
+              <code>&lt;HEAD&gt;</code>-tagien sisälle lisätään metatietoa 
+              sivusta, kuten <code>&lt;meta charset="utf-8"&gt;</code>, 
+              sivun <code>&lt;title&gt;</code> sekä linkit tyylitiedostoihin 
+              tai JavaScript-tiedostoihin. Lopputagi on 
+              <code>&lt;/HEAD&gt;</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;BODY&gt;</h2>
+            <p class="card-text">
+              <code>&lt;BODY&gt;</code> sisältää kaiken, mikä varsinaisesti 
+              näkyy sivulla. Lopputagi <code>&lt;/BODY&gt;</code> sulkee sivun 
+              varsinaisen sisällön.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;P&gt;</h2>
+            <p class="card-text">
+              <code>&lt;P&gt;</code>-tagin avulla luodaan tekstikappaleita 
+              (paragraph). Sopii siis tekstisisällön palasteluun loogisiin 
+              kappaleisiin. Lopputagi on <code>&lt;/P&gt;</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;IMG&gt;</h2>
+            <p class="card-text">
+              <code>&lt;IMG&gt;</code>-tagilla voit näyttää kuvia sivulla. 
+              Se ei tarvitse lopputagia, vaan määrittely hoidetaan attribuuteilla 
+              kuten <code>src</code>, <code>alt</code> ja <code>width</code>.
+            </p>
+            <p>
+              Esimerkiksi:<br>
+              <code>&lt;img src="kuvat/kissa.jpg" alt="Kuva kissasta"&gt;</code>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;A&gt;</h2>
+            <p class="card-text">
+              <code>&lt;A&gt;</code>-tagilla luot linkkejä (anchors). 
+              Tärkein attribuutti on <code>href</code>, joka kertoo linkin kohteen.  
+              Lopputagi on <code>&lt;/A&gt;</code>. 
+            </p>
+            <p>
+              Esimerkki:<br>
+              <code>&lt;a href="https://www.google.fi"&gt;Siirry Googleen&lt;/a&gt;</code>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;BR&gt;</h2>
+            <p class="card-text">
+              <code>&lt;BR&gt;</code>-tagi siirtää tekstin seuraavalle riville. 
+              Se on ns. itsesulkeutuva elementti, eikä sillä ole lopputagia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">&lt;H1&gt;</h2>
+            <p class="card-text">
+              <code>&lt;H1&gt;</code>-tagia käytetään ykköstason otsikolle. 
+              Sivulla voi (ja yleensä kannattaa) olla vain yksi <code>H1</code>, 
+              koska se määrittelee sivun pääotsikon.  
+              Löytyy myös <code>H2</code>, <code>H3</code>, 
+              jne. otsikkotasoja tarpeen mukaan. Lopputagi on <code>&lt;/H1&gt;</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="mt-5">
+        <h2>Kuva</h2>
+        <p>Alla <code>&lt;img&gt;</code>-tagilla lisätty kuva (Bootstrapin asetuksilla)</p>
+        <img 
+          src="https://www.unelmalemmikit.net/images/categories/kissa_orig.jpg" 
+          alt="Paikkamerkkikuva" 
+          class="img-fluid rounded">
+      </div>
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/boots
+trap.bundle.min.js" integrity="sha384-
+ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1
+p" crossorigin="anonymous"></script>
+</body>
+</html
