@@ -5,8 +5,6 @@ window.onload = function() {
     iframe.src = 'https://www.google.com/maps?q=' +
       encodeURIComponent(defaultAddress + ' ' + defaultCity) + '&output=embed';
   };
-
-  // Haetaan elementit
   var searchButton = document.getElementById('searchBtn');
   searchButton.onclick = function() {
     var address = document.getElementById('address').value;
