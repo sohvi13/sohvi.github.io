@@ -32,17 +32,16 @@
 
   #media-container {
   width: 400px;
-  /* kiinteä korkeus pelkälle kuvalle */
 }
 .image-wrapper {
   width: 100%;
-  height: 250px;       /* sama korkeus kaikille kuville */
-  overflow: hidden;    /* rajausta varten */
-  margin-bottom: 10px; /* tilaa tekstille */
+  height: 250px;   
+  overflow: hidden;    
+  margin-bottom: 10px; 
 }
 #media-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* täyttää laatikon, rajaten tarpeen mukaan */
-  display: block;      /* poistaa inline-kuvien mahdolliset välit */
+  object-fit: cover;   
+  display: block;      
 }

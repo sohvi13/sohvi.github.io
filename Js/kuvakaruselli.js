@@ -23,7 +23,6 @@ const mediaData = [
   let intervalId = null;
   const STORAGE_KEY = 'mediaElementIndex';
 
-  // Näytä mediaelementin sisältö annetulla indeksillä
   function displayMedia(index) {
     const item = mediaData[index];
     $('#media-container').fadeOut(200, function() {
@@ -33,7 +32,6 @@ const mediaData = [
       $('#media-content').text(item.content);
       $(this).fadeIn(200);
     });
-    // Tallenna indeksi localStorageen
     localStorage.setItem(STORAGE_KEY, index);
   }
 
@@ -49,7 +47,7 @@ const mediaData = [
 
   function startPlay() {
     if (!intervalId) {
-      intervalId = setInterval(showNext, 3000); // vaihtuu 3 sekunnin välein
+      intervalId = setInterval(showNext, 3000);
       $('#playBtn').text('Pause');
     }
   }
@@ -63,14 +61,13 @@ const mediaData = [
   }
 
   $(document).ready(function() {
-    // Alusta indeksi localStoragesta tai 0
+
     const savedIndex = parseInt(localStorage.getItem(STORAGE_KEY), 10);
     if (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < mediaData.length) {
       currentIndex = savedIndex;
     }
     displayMedia(currentIndex);
 
-    // Painikkeiden tapahtumankäsittelijät
     $('#nextBtn').on('click', function() {
       stopPlay();
       showNext();
