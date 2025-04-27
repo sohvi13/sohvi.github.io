@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Haku</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" type="image/x-icon" href="favicon.ico">
+ <link type="text/css" href="flex.css">
+</head>
+<script defer src="Js/kartta.js"></script>
+<body>
+    <div id="controls">
+        <h1>Google Maps Haku</h1>
+  <label for="address">Katuosoite:</label>
+  <input type="text" id="address" placeholder="Esim. Yliopistonkatu 36">
+  <label for="city">Kaupunki:</label>
+  <input type="text" id="city" placeholder="Esim. Lappeenranta">
+  <button id="searchBtn">Hae</button>
+    </div>
+  <iframe
+    id="mapframe"
+    src=""
+    width="600"
+    height="450"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</body>
+</html>
