@@ -24,15 +24,6 @@ calculate(a, b, op) {
 $(function() {
     const calc = new Calculator();
   
-    // Apufunktio: tuottaa satunnaisluvun 1–10
-    function randomInt() {
-      return Math.floor(Math.random() * 10) + 1;
-    }
-  
-    // Aseta alkulukuarvot sivun latautuessa
-    $('#numberA').val(randomInt());
-    $('#numberB').val(randomInt());
-  
     // Yleistetty kentän päivittäjä [+] ja [–] -painikkeille
     function updateField(selector, delta) {
       let val = parseInt($(selector).val(), 10);
