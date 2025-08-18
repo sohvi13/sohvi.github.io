@@ -1,45 +1,48 @@
-$(document).ready(function() {
-  const $sizeSelect    = $('#pizzaChoice');
-  const $toppingInputs = $('.topping');
-  const $totalField    = $('#totalAmount');
-  const $orderButton   = $('#orderButton');
+$(document).ready(function () {
+  const $sizeSelect = $("#pizzaChoice");
+  const $toppingInputs = $(".topping");
+  const $totalField = $("#totalAmount");
+  const $orderButton = $("#orderButton");
 
   function updateTotal() {
     let sizePrice = parseFloat($sizeSelect.val());
     let toppingsPrice = 0;
 
-    $toppingInputs.each(function() {
+    $toppingInputs.each(function () {
       if (this.checked) {
-        toppingsPrice += parseFloat($(this).data('price'));
+        toppingsPrice += parseFloat($(this).data("price"));
       }
     });
 
     let total = sizePrice + toppingsPrice;
-    $totalField.val(total.toFixed(2) + ' €');
+    $totalField.val(total.toFixed(2) + " €");
   }
 
-  $sizeSelect.on('change', updateTotal);
-  $toppingInputs.on('change', updateTotal);
+  $sizeSelect.on("change", updateTotal);
+  $toppingInputs.on("change", updateTotal);
 
   updateTotal();
 
-  $orderButton.on('click', function() {
-    let sizeText = $sizeSelect.find('option:selected').text();
+  $orderButton.on("click", function () {
+    let sizeText = $sizeSelect.find("option:selected").text();
     let selectedToppings = $toppingInputs
-      .filter(':checked')
-      .map(function() { return $(this).next('label').text(); })
+      .filter(":checked")
+      .map(function () {
+        return $(this).next("label").text();
+      })
       .get();
 
-    let message = `Olet tilannut ${sizeText}`
-                + (selectedToppings.length
-                   ? `, täytteillä: ${selectedToppings.join(', ')}.`
-                   : '.')
-                + ` Hinta yhteensä: ${$totalField.val()}`;
+    let message =
+      `Olet tilannut ${sizeText}` +
+      (selectedToppings.length
+        ? `, täytteillä: ${selectedToppings.join(", ")}.`
+        : ".") +
+      ` Hinta yhteensä: ${$totalField.val()}`;
 
     alert(message);
 
-    $sizeSelect.prop('selectedIndex', 0);
-    $toppingInputs.prop('checked', false);
+    $sizeSelect.prop("selectedIndex", 0);
+    $toppingInputs.prop("checked", false);
     updateTotal();
   });
 });

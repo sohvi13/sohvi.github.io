@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lomake</title>
+  </head>
+  <body>
+    <form action="" method="get" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Contact information:</legend>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" />
+        <label for="text">Preferred contact method:</label>
+        <br />
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" />
+        <!--if I want that just one of the buttons is selected then name= should be same for both (preffed)-->
+        <input type="checkbox" id="tmail" name="preffered" value="email" />
+        <label for="tmail">Email</label>
+        <br />
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="mail" />
+        <input type="checkbox"id="tphone"name="preffered2"value="telephone"/>
+        <label for="tphone">Telephone</label>
+        <br />
+        <label for="tname">Telephone:</label>
+        <input type="tel" id="tname" name="tname" /><br />
+      </fieldset>
+      <fieldset>
+        <legend>Feedback:</legend>
+        <label for="smessage">Message subject:</label>
+        <input type="text" id="smessage" name="smessage" /><br />
+        <textarea id="message" name="message" rows="10" cols="30"></textarea
+        ><br />
+        <label for="file">Attach a file:</label>
+        <input type="file" id="file" name="file" />
+        <br />
+        <button type="submit">Send</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+<!--<script>
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault(); // don't actually submit
+  const fd = new FormData(e.target);
+  for (const [k, v] of fd.entries()) console.log(k, v);
+});
+</script>-->
