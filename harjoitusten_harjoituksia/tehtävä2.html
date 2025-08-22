@@ -2,29 +2,32 @@
 <html>
   <head>
     <title>Lomake</title>
+    <link rel="stylesheet" href="tehtävä2.css">
   </head>
   <body>
-    <form action="" method="get" enctype="multipart/form-data">
-      <fieldset>
-        <legend>Contact information:</legend>
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" />
-        <label for="text">Preferred contact method:</label>
-        <br />
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" />
-        <!--if I want that just one of the buttons is selected then name= should be same for both (preffed)-->
-        <input type="checkbox" id="tmail" name="preffered" value="email" />
-        <label for="tmail">Email</label>
-        <br />
-        <label for="mail">Email:</label>
-        <input type="email" id="mail" name="mail" />
-        <input type="checkbox"id="tphone"name="preffered2"value="telephone"/>
-        <label for="tphone">Telephone</label>
-        <br />
-        <label for="tname">Telephone:</label>
-        <input type="tel" id="tname" name="tname" /><br />
-      </fieldset>
+    <!--<form action="" method="get" enctype="multipart/form-data">-->
+      <div id="eka">
+        <fieldset>
+          <legend>Contact information:</legend>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" />
+          <label for="text">Preferred contact method:</label>
+          <br />
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" />
+          <!--if I want that just one of the buttons is selected then name= should be same for both (preffed)-->
+          <input type="checkbox" id="tmail" name="preffered" value="email" />
+          <label for="tmail">Email</label>
+          <br />
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="mail" />
+          <input type="checkbox"id="tphone"name="preffered2"value="telephone"/>
+          <label for="tphone">Telephone</label>
+          <br />
+          <label for="tname">Telephone:</label>
+          <input type="tel" id="tname" name="tname" /><br />
+        </fieldset>
+      </div>
       <fieldset>
         <legend>Feedback:</legend>
         <label for="smessage">Message subject:</label>
@@ -36,7 +39,7 @@
         <br />
         <button type="submit">Send</button>
       </fieldset>
-    </form>
+    <!--</form>-->
   </body>
 </html>
 
