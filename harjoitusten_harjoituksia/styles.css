@@ -1,0 +1,30 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+    text-align: center;
+}
+p {
+    font-family: fantasy;
+    color: blue;
+    text-align: center;
+    margin-top: 10px;
+}
+li {
+    font-family: sans-serif;
+    color: chocolate;
+    text-align: center;
+}
+a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #587;
+    text-align: center;
+}
+th {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #790;
+    text-align: center;
+}
+img {
+    margin-left: 150px;
+    padding: 50px;
+}
