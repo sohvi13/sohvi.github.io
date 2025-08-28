@@ -1,30 +1,31 @@
+/* Pieniä siistauksia ja asettelua */
+body {
+  background: #fafafa;
+}
+
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    color: aqua;
-    text-align: center;
+  font-weight: 700;
 }
-p {
-    font-family: fantasy;
-    color: blue;
-    text-align: center;
-    margin-top: 10px;
+
+.card {
+  border-radius: 1rem;
 }
-li {
-    font-family: sans-serif;
-    color: chocolate;
-    text-align: center;
-}
-a {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #587;
-    text-align: center;
-}
-th {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #790;
-    text-align: center;
-}
+
 img {
-    margin-left: 150px;
-    padding: 50px;
+  border-radius: 1rem;
+}
+
+.total-row .input-group-text {
+  font-weight: 700;
+}
+
+.total-input {
+  max-width: 220px;
+}
+
+/* Responsiiviset marginaalit */
+@media (max-width: 576px) {
+  .total-input {
+    max-width: 100%;
+  }
 }

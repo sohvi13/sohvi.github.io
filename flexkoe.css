@@ -1,50 +1,58 @@
-.orderButton {
-    align-items: center;
-    
+/* ========== Perus ========== */
+:root{
+  --bg:#064420;
+  --bg-dark:#022d14;
+  --text:#fff;
+  --field-text:#000;
+  --muted:#999;
+  --accent:#2ecc71;     /* vihreä ON-tila */
 }
 
-/*toggle switch*/
-/* toggle in label designing */
-.toggle {
-    position : relative ;
-    display : inline-block;
-    width : 100px;
-    height : 52px;
-    background-color: red;
-    border-radius: 30px;
-    border: 2px solid gray;
+img.img-fluid{max-width:100%;height:auto}
+
+/* ========== Tilauksen laatikko ========== */
+.orderBox{
+  background:var(--bg)!important;
+  border:4px solid var(--bg-dark)!important;
+  border-radius:12px;
+  color:var(--text);
 }
-       
-/* After slide changes */
-.toggle:after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: gray;
-    top: 1px; 
-    left: 1px;
-    transition:  all 0.5s;
+
+/* Lomakekentät luettaviksi */
+.orderBox input,
+.orderBox select,
+.orderBox label{ color:var(--field-text) }
+
+.account{ width:160px; padding:6px 8px }
+
+/* Tilaa-nappi keskelle ilman turhaa luokittelua */
+#orderButton{ display:inline-flex; align-items:center; }
+
+
+/* Kanta-asiakas – tavallinen checkbox vihreällä taustalla */
+#primeCustomerContainer .form-check-label{
+  color: var(--text);                /* näkyy vihreällä taustalla */
+  font-weight: 600;
 }
-       
-/* Toggle text */
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+
+#primeCustomerContainer .form-check-input:checked{
+  background-color: var(--accent);   /* sama teeman vihreä */
+  border-color: var(--accent);
 }
-       
-/* Checkbox checked effect */
-.checkbox:checked + .toggle::after {
-    left : 49px; 
+
+#primeCustomerContainer .form-check-input:focus{
+  box-shadow: 0 0 0 .2rem rgba(46,204,113,.25);
 }
-       
-/* Checkbox checked toggle label bg color */
-.checkbox:checked + .toggle {
-    background-color: green;
+
+/* Pizza määrä -kenttä */
+#orderAmount {
+  background: var(--bg);
+  border: 2px solid var(--bg-dark);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 6px 10px;
+  width: 160px;
 }
-       
-/* Checkbox vanished */
-.checkbox { 
-    display : none;
+#orderAmount::placeholder {
+  color: #ccc;
 }

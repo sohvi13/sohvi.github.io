@@ -1,54 +1,76 @@
-var pizzaTypes = ['Tropicana', 'Perfetta', 'Pepperoni'],
-      select = document.getElementById('pizzaChoice');
-      for(pizzas in pizzaTypes) {
-        select.add(new Option(pizzaTypes[pizzas], pizzas));
-      };
-      var orderedPizzaType = document.getElementById("pizzaChoice");
+// Asetukset
+const BASE_PRICE   = 10.0;  // Kaikkien pizzojen perushinta (sama kaikille)
+const EXTRA_PRICE  = 2.0;   // 2 €/valittu extra/pizza
+const DISCOUNT     = 0.10;  // Kanta-asiakas -10 %
 
-      if (orderedPizzaType = pizzaTypes[0]) {
-        itemTotal = 10.00;
-        }
-        else if (orderedPizzaType = pizzaTypes[1]) {
-          itemTotal = 12.00;
-        }
-        else if (orderedPizzaType = pizzaTypes[2]) {
-          itemTotal = 13.00;
-        }
-        
-var order = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-      select = document.getElementById('orderAmount');
-      for(quant in order) {
-        select.add(new Option(order[quant], quant));
-      };
+document.addEventListener("DOMContentLoaded", () => {
+  // Elementit (pidetään samat id:t kuin alkuperäisessä)
+  const pizzaSelect = document.getElementById('pizzaChoice');
+  const amountInput = document.getElementById('orderAmount');
+  const totalInput  = document.getElementById('total');
+  const primeSwitch = document.getElementById('switch');
+  const orderBtn    = document.getElementById('orderButton');
 
-function condimentValidate() {
-    var valid = false;
-    if (document.getElementById("garlic").checked) {
-        valid = true;
-    }
-    else if (document.getElementById("oregano").checked) {
-        valid = true;
-    }
-    else if (document.getElementById("cheese").checked) {
-        valid = true;
-    }
-    else {
-        valid = false;
-    }
-}
+  // Täytetään pizzavaihtoehdot
+  const pizzaTypes = ['Tropicana', 'Perfetta', 'Pepperoni'];
+  pizzaTypes.forEach((name, i) => {
+    pizzaSelect.add(new Option(name, String(i)));
+  });
 
-function addPrimeCustomer() {
-    var valid = false;
-    if (document.getElementById("switch").checked) {
-        valid = true;
-    }
-    else {
-        valid = false;
-    }
-}
+  // Extrat id:illä
+  const extras = ['garlic', 'oregano', 'cheese'];
 
+  // Apu: määrän rajaaminen 1–10
+  function clampQty(value) {
+    const n = Number(value);
+    if (Number.isNaN(n)) return 1;
+    return Math.min(Math.max(n, 1), 10);
+  }
 
+  function getExtrasCount() {
+    return extras.reduce((sum, id) => {
+      const el = document.getElementById(id);
+      return sum + (el && el.checked ? 1 : 0);
+    }, 0);
+  }
 
-function total() {
+  function calcTotal() {
+    const qty = clampQty(amountInput.value);
+    const extraCostPerPizza = getExtrasCount() * EXTRA_PRICE;
+    let subtotal = (BASE_PRICE + extraCostPerPizza) * qty;
+    if (primeSwitch.checked) subtotal *= (1 - DISCOUNT);
+    // 2 desimaalia
+    return Math.round(subtotal * 100) / 100;
+  }
 
-}
+  function updateTotal() {
+    const t = calcTotal();
+    // Näytetään suomalaisella muodolla (pilkku desimaalina)
+    totalInput.value = t.toLocaleString('fi-FI', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  // Tapahtumat (kevyesti, ulkoasu ei muutu)
+  ['change', 'input'].forEach(evt => {
+    pizzaSelect.addEventListener(evt, updateTotal);
+    amountInput.addEventListener(evt, () => {
+      amountInput.value = clampQty(amountInput.value);
+      updateTotal();
+    });
+    primeSwitch.addEventListener(evt, updateTotal);
+    extras.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener(evt, updateTotal);
+    });
+  });
+
+  orderBtn.addEventListener('click', () => {
+    alert(`Tilauksesi on vastaanotettu. Summa: € ${totalInput.value}`);
+  });
+
+  // Alustus
+  pizzaSelect.selectedIndex = 0;
+  updateTotal();
+});
