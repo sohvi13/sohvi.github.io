@@ -20,9 +20,10 @@ img.img-fluid{max-width:100%;height:auto}
 
 /* Lomakekentät luettaviksi */
 .orderBox input,
-.orderBox select,
-.orderBox label{ color:var(--field-text) }
-
+.orderBox select { color:var(--field-text) }
+.orderBox label,
+.orderBox h2,
+.orderBox h3 { color: var(--text); } 
 .account{ width:160px; padding:6px 8px }
 
 /* Tilaa-nappi keskelle ilman turhaa luokittelua */
@@ -55,4 +56,43 @@ img.img-fluid{max-width:100%;height:auto}
 }
 #orderAmount::placeholder {
   color: #ccc;
+}
+
+/*.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  left: 120%; 
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}*/
+
+/*.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+}*/
+
+/* Valkoinen Bootstrap-tooltip */
+.tooltip-white .tooltip-inner {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  border-radius: .375rem;
+}
+
+/* Nuolen väri (riittää yleensä laittaa kaikkiin suuntiin valkoinen) */
+.tooltip-white .tooltip-arrow::before {
+  border-top-color: #fff !important;
+  border-bottom-color: #fff !important;
+  border-left-color: #fff !important;
+  border-right-color: #fff !important;
 }

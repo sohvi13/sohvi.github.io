@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const primeSwitch = document.getElementById('switch');
   const orderBtn    = document.getElementById('orderButton');
 
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+
+
   // Täytetään pizzavaihtoehdot
   const pizzaTypes = ['Tropicana', 'Perfetta', 'Pepperoni'];
   pizzaTypes.forEach((name, i) => {
